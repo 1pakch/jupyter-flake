@@ -6,11 +6,25 @@
   };
 
   outputs = { self, nixpkgs }: {
+
+    # Packages
+
     packages.x86_64-linux.jupyter = nixpkgs.legacyPackages.x86_64-linux.jupyter;
+
     packages.x86_64-linux.default = self.packages.x86_64-linux.jupyter;
-    apps.x86_64-linux.default = {
+
+    # Applications
+
+    apps.x86_64-linux.jupyter-lab = {
       type = "app";
       program = "${self.packages.x86_64-linux.jupyter}/bin/jupyter-lab";
     };
+
+    apps.x86_64-linux.jupyter-notebook = {
+      type = "app";
+      program = "${self.packages.x86_64-linux.jupyter}/bin/jupyter-notebook";
+    };
+
+    apps.x86_64-linux.default = self.apps.x86_64-linux.jupyter-lab;
   };
 }
