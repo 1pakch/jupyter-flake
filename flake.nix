@@ -8,6 +8,7 @@
   outputs = { self, nixpkgs }: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
     pythonEnv = pkgs.python3.withPackages (ps: [ps.ipykernel ps.numpy]);
+    rEnv = pkgs.rWrapper.override { packages = [ pkgs.rPackages.IRkernel ]; };
     kernelspecs = {
       pythonenv = let
         env = pythonEnv;
@@ -23,6 +24,23 @@
         language = "python";
         logo32 = "${env}/${env.sitePackages}/ipykernel/resources/logo-32x32.png";
         logo64 = "${env}/${env.sitePackages}/ipykernel/resources/logo-64x64.png";
+      };
+      Renv = let
+        env = rEnv;
+      in {
+        displayName = "R";
+        # See https://github.com/IRkernel/IRkernel/blob/1eddb304b246c14b62949abd946e8d4ca5080d25/inst/kernelspec/kernel.json
+        argv = [
+          "${rEnv}/bin/R"
+          "--slave"
+          "-e"
+          "IRkernel::main()"
+          "--args"
+          "{connection_file}"
+        ];
+        language = "R";
+        logo32 = null;
+        logo64 = null;
       };
     };
   in {
