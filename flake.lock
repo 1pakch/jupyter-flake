@@ -16,9 +16,45 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1682303062,
+        "narHash": "sha256-x+KAADp27lbxeoPXLUMxKcRsUUHDlg+qVjt5PjgBw9A=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f5364316e314436f6b9c8fd50592b18920ab18f9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "scanpy-env": "scanpy-env"
+      }
+    },
+    "scanpy-env": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1711104513,
+        "narHash": "sha256-V2qxVtjh8lqE/qkQk5UioCmBclRWFSGEsdutGA31gZg=",
+        "owner": "1pakch",
+        "repo": "scanpy-nix-flake",
+        "rev": "1fde3a239c98df50ae7814abb5db70a9ece4be9d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "1pakch",
+        "ref": "kernel",
+        "repo": "scanpy-nix-flake",
+        "type": "github"
       }
     }
   },

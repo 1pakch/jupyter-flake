@@ -3,19 +3,17 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    scanpy-env.url = "github:1pakch/scanpy-nix-flake/kernel";
   };
 
-  outputs = { self, nixpkgs }: let
+  outputs = { self, nixpkgs, scanpy-env }: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
     ks-utils = import ./kernelspec-utils.nix;
     kernelspecs = {
 
       pykernel = ks-utils.fromPythonEnv {
-        env = pkgs.python3.withPackages (ps: [
-          ps.ipykernel
-          ps.numpy
-        ]);
-        suffix = "(numpy)";
+        env = scanpy-env.packages.x86_64-linux.default;
+        suffix = "(scanpy)";
       };
 
       rkernel = ks-utils.fromREnv {
