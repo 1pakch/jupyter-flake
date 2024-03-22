@@ -21,9 +21,10 @@
           packages = [
             pkgs.rPackages.IRkernel
             pkgs.rPackages.SoupX
+            pkgs.rPackages.scDblFinder
           ];
         };
-        suffix = "(SoupX)";
+        suffix = "(SoupX+scDblFinder)";
       };
 
     };
