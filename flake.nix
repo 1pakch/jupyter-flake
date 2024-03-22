@@ -20,9 +20,10 @@
         env = pkgs.rWrapper.override {
           packages = [
             pkgs.rPackages.IRkernel
+            pkgs.rPackages.SoupX
           ];
         };
-        suffix = "(barebone)";
+        suffix = "(SoupX)";
       };
 
     };
