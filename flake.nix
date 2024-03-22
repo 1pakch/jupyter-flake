@@ -7,19 +7,28 @@
 
   outputs = { self, nixpkgs }: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
-    pythonEnv = pkgs.python3.withPackages (ps: [ps.ipykernel ps.numpy]);
-    rEnv = pkgs.rWrapper.override { packages = [ pkgs.rPackages.IRkernel ]; };
     ks-utils = import ./kernelspec-utils.nix;
     kernelspecs = {
+
       pykernel = ks-utils.fromPythonEnv {
-        env = pythonEnv;
+        env = pkgs.python3.withPackages (ps: [
+          ps.ipykernel
+          ps.numpy
+        ]);
         suffix = "(numpy)";
       };
+
       rkernel = ks-utils.fromREnv {
-        env = rEnv;
+        env = pkgs.rWrapper.override {
+          packages = [
+            pkgs.rPackages.IRkernel
+          ];
+        };
         suffix = "(barebone)";
       };
+
     };
+
   in {
 
     # Packages
