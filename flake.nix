@@ -1,5 +1,5 @@
 {
-  description = "A flake with Jupyter package";
+  description = "Jupyter server with pluggable nix flake kernels";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
