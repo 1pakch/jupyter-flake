@@ -16,7 +16,7 @@
         suffix = "(scanpy)";
       };
 
-      rkernel = ks-utils.fromREnv {
+      r-single-cell = ks-utils.fromREnv {
         env = pkgs.rWrapper.override {
           packages = [
             pkgs.rPackages.IRkernel
@@ -25,6 +25,17 @@
           ];
         };
         suffix = "(SoupX+scDblFinder)";
+      };
+
+      r-mofa2 = ks-utils.fromREnv {
+        env = pkgs.rWrapper.override {
+          packages = [
+            pkgs.rPackages.IRkernel
+            pkgs.rPackages.MOFA2
+            pkgs.rPackages.tidyverse
+          ];
+        };
+        suffix = "(MOFA2)";
       };
 
     };
