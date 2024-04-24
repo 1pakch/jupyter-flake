@@ -3,29 +3,26 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    r-mofa2-env.url = "github:1pakch/r-mofa2-env";
   };
 
-  outputs = { self, nixpkgs }: let
+  outputs = { self, nixpkgs, r-mofa2-env }: let
 
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
     ks-utils = import ./kernelspec-utils.nix;
     kernelspecs = {
 
-      pykernel = ks-utils.fromPythonEnv {
+      py-pandas-kernel = ks-utils.fromPythonEnv {
         env = pkgs.python3.withPackages (ps: [
           ps.ipykernel
-          ps.numpy
+          ps.pandas
         ]);
-        suffix = "(numpy)";
+        suffix = "(pandas)";
       };
 
-      rkernel = ks-utils.fromREnv {
-        env = pkgs.rWrapper.override {
-          packages = [
-            pkgs.rPackages.IRkernel
-          ];
-        };
-        suffix = "(barebone)";
+      r-mofa2-kernel = ks-utils.fromREnv {
+        env = r-mofa2-env.packages.x86_64-linux.default;
+        suffix = "(mofa2)";
       };
 
     };
