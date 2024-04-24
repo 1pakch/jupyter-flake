@@ -16,9 +16,44 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1710806803,
+        "narHash": "sha256-qrxvLS888pNJFwJdK+hf1wpRCSQcqA6W5+Ox202NDa0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b06025f1533a1e07b6db3e75151caa155d1c7eb3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "r-mofa2-env": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1713873693,
+        "narHash": "sha256-cgTEW137avw8hDjgEp1hItOmAgyxcQCbWYn/FgJijGM=",
+        "owner": "1pakch",
+        "repo": "r-mofa2-env",
+        "rev": "0ed035f8b948c77cbd0fd7011bfe706c2dc50eba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "1pakch",
+        "repo": "r-mofa2-env",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "r-mofa2-env": "r-mofa2-env"
       }
     }
   },
