@@ -72,11 +72,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1715622432,
-        "narHash": "sha256-D6M0GORp8pY6u+DhEOj6mNit3RV/3pXa1f3Y1rg6epA=",
+        "lastModified": 1715623392,
+        "narHash": "sha256-7phzjrDJOIVWCoNeop1Lz6mfHH71s1Xi6D626L5sjEE=",
         "owner": "1pakch",
         "repo": "r-mofa2-env",
-        "rev": "c399bf8abad6657c6e27c2934ad7127b34830e2b",
+        "rev": "02be04052c06332cb1352e500d31e89ff0b0ce9b",
         "type": "github"
       },
       "original": {
