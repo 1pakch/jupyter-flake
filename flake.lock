@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "mofapy2-env": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1715607092,
+        "narHash": "sha256-IFRsEMxfcHa3gkNwiu1p3xDl44ZYfU78GyBcxM+5zBo=",
+        "owner": "1pakch",
+        "repo": "mofapy2-env",
+        "rev": "d19db0179d199435345a37f87d88f3a9c5f21d93",
+        "type": "github"
+      },
+      "original": {
+        "owner": "1pakch",
+        "repo": "mofapy2-env",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1710806803,
@@ -18,6 +36,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1715447595,
+        "narHash": "sha256-VsVAUQOj/cS1LCOmMjAGeRksXIAdPnFIjCQ0XLkCsT0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "062ca2a9370a27a35c524dc82d540e6e9824b652",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1710806803,
         "narHash": "sha256-qrxvLS888pNJFwJdK+hf1wpRCSQcqA6W5+Ox202NDa0=",
         "owner": "nixos",
@@ -34,14 +68,15 @@
     },
     "r-mofa2-env": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "mofapy2-env": "mofapy2-env",
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1713873693,
-        "narHash": "sha256-cgTEW137avw8hDjgEp1hItOmAgyxcQCbWYn/FgJijGM=",
+        "lastModified": 1715622432,
+        "narHash": "sha256-D6M0GORp8pY6u+DhEOj6mNit3RV/3pXa1f3Y1rg6epA=",
         "owner": "1pakch",
         "repo": "r-mofa2-env",
-        "rev": "0ed035f8b948c77cbd0fd7011bfe706c2dc50eba",
+        "rev": "c399bf8abad6657c6e27c2934ad7127b34830e2b",
         "type": "github"
       },
       "original": {
