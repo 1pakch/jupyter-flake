@@ -20,6 +20,16 @@
         suffix = "(pandas)";
       };
 
+      py-sklearn-kernel = ks-utils.fromPythonEnv {
+        env = pkgs.python3.withPackages (ps: [
+          ps.ipykernel
+          ps.pandas
+          ps.scikit-learn
+          ps.seaborn
+        ]);
+        suffix = "(sklearn)";
+      };
+
       r-mofa2-kernel = ks-utils.fromREnv {
         env = r-mofa2-env.packages.x86_64-linux.default;
         suffix = "(mofa2)";
