@@ -25,6 +25,7 @@
           ps.ipykernel
           ps.pandas
           ps.scikit-learn
+          ps.scikit-survival
           ps.seaborn
         ]);
         suffix = "(sklearn)";
