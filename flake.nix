@@ -69,6 +69,11 @@
       program = "${self.packages.x86_64-linux.jupyter-env}/bin/jupyter-notebook";
     };
 
+    apps.x86_64-linux.jupytext = {
+      type = "app";
+      program = "${self.packages.x86_64-linux.jupyter-env}/bin/jupytext";
+    };
+
     apps.x86_64-linux.default = self.apps.x86_64-linux.jupyter-lab;
   };
 }
