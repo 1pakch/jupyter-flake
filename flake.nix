@@ -14,9 +14,10 @@
       pykernel = ks-utils.fromPythonEnv {
         env = pkgs.python3.withPackages (ps: [
           ps.ipykernel
-          ps.numpy
+          ps.pandas
+          ps.seaborn
         ]);
-        suffix = "(numpy)";
+        suffix = "(mpl+pd+sns)";
       };
 
       rkernel = ks-utils.fromREnv {
