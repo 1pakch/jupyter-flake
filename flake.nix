@@ -16,6 +16,7 @@
           ps.ipykernel
           ps.pandas
           ps.seaborn
+          ps.scipy
         ]);
         suffix = "(mpl+pd+sns)";
       };
